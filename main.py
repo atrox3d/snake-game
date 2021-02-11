@@ -9,15 +9,15 @@ screen.title("Snake Game")
 #
 #   create snake body
 #
-snake = []
-offset = 0
-for _ in range(3):
-    s = Turtle("square")
-    s.color("white")
-    s.penup()
-    s.setx(offset)
-    snake.append(s)
-    offset -= 20
+positions = [
+    (0, 0),
+    (-20, 0),
+    (-40, 0)
+]
 
+for position in positions:
+    segment = Turtle("square")
+    segment.color("white")
+    segment.goto(position)
 
 screen.exitonclick()
