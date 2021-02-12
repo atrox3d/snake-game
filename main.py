@@ -23,8 +23,10 @@ screen.onkey(snake.right, "Right")
 gameon = True
 while gameon:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(0.2)
 
     snake.move()
+    if snake.head.distance(food) < 15:
+        food.refresh()
 
 screen.exitonclick()
