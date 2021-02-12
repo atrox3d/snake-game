@@ -26,12 +26,13 @@ screen.onkey(snake.right, "Right")
 gameon = True
 while gameon:
     screen.update()
-    time.sleep(0.2)
+    time.sleep(0.1)
 
     snake.move()
     if snake.head.distance(food) < 15:
         food.refresh()
         scoreboard.increase()
+        snake.extend()
 
     if snake.head.xcor() > 280 or \
             snake.head.xcor() < -280 or \
